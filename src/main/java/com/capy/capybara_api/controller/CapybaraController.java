@@ -34,6 +34,8 @@ public class CapybaraController {
             capivara.setNome(capivaraAtualizada.getNome());
             capivara.setFotoUrl(capivaraAtualizada.getFotoUrl());
             capivara.setDescricao(capivaraAtualizada.getDescricao());
+            capivara.setHabitat(capivaraAtualizada.getHabitat());
+            capivara.setPeso(capivaraAtualizada.getPeso());
             return repository.save(capivara);
         }).orElseThrow(() -> new RuntimeException("Ei essa capivarinha não existe: " + id));
     }
