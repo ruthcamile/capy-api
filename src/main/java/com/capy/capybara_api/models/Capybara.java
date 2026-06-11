@@ -1,5 +1,5 @@
 package com.capy.capybara_api.models;
-
+// model: estrutura dos dados, como o capivara vai ser representado no banco de dados (o que é uma capivara, quais informações ela tem) 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +15,8 @@ public class Capybara {
     private String nome;
     private String fotoUrl;
     private String descricao;
+    private String habitat; 
+    private String peso; 
 
     // construtor vazio obrigatório para o Spring
     public Capybara() {
@@ -51,5 +53,21 @@ public class Capybara {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
+
+    public String getPeso() {
+        return peso;
+    }
+
+    public void setPeso(String peso) {
+        this.peso = peso;
     }
 }
