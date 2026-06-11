@@ -2,9 +2,7 @@ package com.capy.capybara_api.controller;
 
 import com.capy.capybara_api.models.Capybara;
 import com.capy.capybara_api.repository.CapybaraRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -12,8 +10,11 @@ import java.util.List;
 @CrossOrigin(origins = "*") // Permite que o React Native acesse as rotas livremente
 public class CapybaraController {
 
-    @Autowired
-    private CapybaraRepository repository;
+    private final CapybaraRepository repository; // acessar o banco de dados 
+
+    CapybaraController(CapybaraRepository repository) { // recebe o repositório
+        this.repository = repository;
+    }
 
     // 1. POST - Cadastrar uma nova capivara
     @PostMapping
